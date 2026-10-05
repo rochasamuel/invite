@@ -63,23 +63,24 @@ export function embossFilter(
 const toUrl = (svg) => `url("data:image/svg+xml,${encodeURIComponent(svg.replace(/\s+/g, ' '))}")`
 
 // Eggshell: a fine bump map lit from the top left, kept close to white so it
-// multiplies over the paper as a soft granular surface.
-const grain = `<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220">
+// multiplies over the paper as a soft granular surface. Phones get a gentler
+// pass: the same grain reads heavier and darker on small, dense screens.
+const grain = ({ relief = 1.5, gain = 1.12, opacity = 0.6 } = {}) => `<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220">
   <filter id="e" x="0" y="0" width="100%" height="100%">
     <feTurbulence type="fractalNoise" baseFrequency="1.15" numOctaves="2" seed="4" stitchTiles="stitch"/>
-    <feDiffuseLighting surfaceScale="1.5" diffuseConstant="1" lighting-color="#fff">
+    <feDiffuseLighting surfaceScale="${relief}" diffuseConstant="1" lighting-color="#fff">
       <feDistantLight azimuth="225" elevation="58"/>
     </feDiffuseLighting>
-    <feColorMatrix type="matrix" values="1.12 0 0 0 0  0 1.12 0 0 0  0 0 1.12 0 0  0 0 0 1 0"/>
+    <feColorMatrix type="matrix" values="${gain} 0 0 0 0  0 ${gain} 0 0 0  0 0 ${gain} 0 0  0 0 0 1 0"/>
   </filter>
-  <rect width="220" height="220" filter="url(#e)" opacity="0.6"/>
+  <rect width="220" height="220" filter="url(#e)" opacity="${opacity}"/>
 </svg>`
 
 // A softer, larger mottling so the sheet does not read as flat colour.
-const mottle = `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600">
+const mottle = ({ alpha = 0.13 } = {}) => `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600">
   <filter id="m" x="0" y="0" width="100%" height="100%">
     <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="9" stitchTiles="stitch"/>
-    <feColorMatrix type="matrix" values="0 0 0 0 0.45  0 0 0 0 0.39  0 0 0 0 0.31  0 0 0 0.13 0"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0.45  0 0 0 0 0.39  0 0 0 0 0.31  0 0 0 ${alpha} 0"/>
   </filter>
   <rect width="600" height="600" filter="url(#m)"/>
 </svg>`
@@ -149,5 +150,7 @@ const vineSvg = (w, h, inner) =>
 export const vineX = toUrl(vineSvg(240, 64, vineInner('')))
 export const vineY = toUrl(vineSvg(64, 240, vineInner('translate(64 0) rotate(90)')))
 
-export const grainUrl = toUrl(grain)
-export const mottleUrl = toUrl(mottle)
+export const grainUrl = toUrl(grain())
+export const mottleUrl = toUrl(mottle())
+export const grainSoftUrl = toUrl(grain({ relief: 0.9, gain: 1.16, opacity: 0.35 }))
+export const mottleSoftUrl = toUrl(mottle({ alpha: 0.07 }))

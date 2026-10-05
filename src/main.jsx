@@ -7,10 +7,12 @@ import '@fontsource/eb-garamond/500.css'
 import '@fontsource/eb-garamond/600.css'
 import './styles.css'
 import App from './App.jsx'
-import { grainUrl, mottleUrl } from './lib/paper.js'
+import { grainSoftUrl, grainUrl, mottleSoftUrl, mottleUrl } from './lib/paper.js'
 
 document.documentElement.style.setProperty('--grain', grainUrl)
 document.documentElement.style.setProperty('--mottle', mottleUrl)
+document.documentElement.style.setProperty('--grain-soft', grainSoftUrl)
+document.documentElement.style.setProperty('--mottle-soft', mottleSoftUrl)
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

@@ -17,7 +17,7 @@
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 
-  color-scheme: light;
+  color-scheme: only light;
   scrollbar-color: var(--line) transparent;
 }
 
@@ -821,6 +821,14 @@ a:hover,
   *::after {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
+  }
+}
+
+/* Phones: the grain reads heavier on small, dense screens, so use the soft pass. */
+@media (max-width: 699px) {
+  body {
+    --grain: var(--grain-soft);
+    --mottle: var(--mottle-soft);
   }
 }
 
