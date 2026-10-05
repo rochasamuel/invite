@@ -1,0 +1,445 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-05T03:46:05.624Z",
+  "title": "Design System: Convite",
+  "extensions": {
+    "colorMeta": {
+      "cobalt": {
+        "role": "primary",
+        "displayName": "Cobalt",
+        "canonical": "oklch(38.7% 0.152 265.8)",
+        "tonalRamp": [
+          "oklch(15% 0.122 265.8)",
+          "oklch(26% 0.136 265.8)",
+          "oklch(37% 0.150 265.8)",
+          "oklch(48% 0.140 265.8)",
+          "oklch(59% 0.126 265.8)",
+          "oklch(70% 0.112 265.8)",
+          "oklch(82% 0.097 265.8)",
+          "oklch(95% 0.081 265.8)"
+        ]
+      },
+      "cobalt-hover": {
+        "role": "primary",
+        "displayName": "Cobalt Hover",
+        "canonical": "oklch(41.9% 0.161 265.7)",
+        "tonalRamp": [
+          "oklch(15% 0.125 265.7)",
+          "oklch(26% 0.140 265.7)",
+          "oklch(37% 0.155 265.7)",
+          "oklch(48% 0.153 265.7)",
+          "oklch(59% 0.138 265.7)",
+          "oklch(70% 0.124 265.7)",
+          "oklch(82% 0.107 265.7)",
+          "oklch(95% 0.090 265.7)"
+        ]
+      },
+      "deep-cobalt": {
+        "role": "primary",
+        "displayName": "Deep Cobalt",
+        "canonical": "oklch(28.2% 0.113 266.1)",
+        "tonalRamp": [
+          "oklch(15% 0.100 266.1)",
+          "oklch(26% 0.111 266.1)",
+          "oklch(37% 0.105 266.1)",
+          "oklch(48% 0.094 266.1)",
+          "oklch(59% 0.084 266.1)",
+          "oklch(70% 0.074 266.1)",
+          "oklch(82% 0.062 266.1)",
+          "oklch(95% 0.050 266.1)"
+        ]
+      },
+      "wash": {
+        "role": "primary",
+        "displayName": "Wash Blue",
+        "canonical": "oklch(75.9% 0.070 267.2)",
+        "tonalRamp": [
+          "oklch(15% 0.034 267.2)",
+          "oklch(26% 0.041 267.2)",
+          "oklch(37% 0.047 267.2)",
+          "oklch(48% 0.054 267.2)",
+          "oklch(59% 0.060 267.2)",
+          "oklch(70% 0.066 267.2)",
+          "oklch(82% 0.066 267.2)",
+          "oklch(95% 0.059 267.2)"
+        ]
+      },
+      "ochre": {
+        "role": "tertiary",
+        "displayName": "Ochre",
+        "canonical": "oklch(75.1% 0.130 79.8)",
+        "tonalRamp": [
+          "oklch(15% 0.065 79.8)",
+          "oklch(26% 0.077 79.8)",
+          "oklch(37% 0.088 79.8)",
+          "oklch(48% 0.100 79.8)",
+          "oklch(59% 0.112 79.8)",
+          "oklch(70% 0.124 79.8)",
+          "oklch(82% 0.122 79.8)",
+          "oklch(95% 0.108 79.8)"
+        ]
+      },
+      "tin-glaze": {
+        "role": "neutral",
+        "displayName": "Tin Glaze",
+        "canonical": "oklch(97.3% 0.007 268.5)",
+        "tonalRamp": [
+          "oklch(15% 0.002 268.5)",
+          "oklch(26% 0.003 268.5)",
+          "oklch(37% 0.003 268.5)",
+          "oklch(48% 0.004 268.5)",
+          "oklch(59% 0.005 268.5)",
+          "oklch(70% 0.005 268.5)",
+          "oklch(82% 0.006 268.5)",
+          "oklch(95% 0.007 268.5)"
+        ]
+      },
+      "glaze-bright": {
+        "role": "neutral",
+        "displayName": "Glaze Highlight",
+        "canonical": "oklch(99.1% 0.003 264.5)",
+        "tonalRamp": [
+          "oklch(15% 0.001 264.5)",
+          "oklch(26% 0.001 264.5)",
+          "oklch(37% 0.001 264.5)",
+          "oklch(48% 0.002 264.5)",
+          "oklch(59% 0.002 264.5)",
+          "oklch(70% 0.002 264.5)",
+          "oklch(82% 0.002 264.5)",
+          "oklch(95% 0.003 264.5)"
+        ]
+      },
+      "grout": {
+        "role": "neutral",
+        "displayName": "Grout",
+        "canonical": "oklch(86.3% 0.029 266.3)",
+        "tonalRamp": [
+          "oklch(15% 0.012 266.3)",
+          "oklch(26% 0.015 266.3)",
+          "oklch(37% 0.017 266.3)",
+          "oklch(48% 0.020 266.3)",
+          "oklch(59% 0.023 266.3)",
+          "oklch(70% 0.025 266.3)",
+          "oklch(82% 0.028 266.3)",
+          "oklch(95% 0.027 266.3)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(26.0% 0.080 268.4)",
+        "tonalRamp": [
+          "oklch(15% 0.072 268.4)",
+          "oklch(26% 0.080 268.4)",
+          "oklch(37% 0.072 268.4)",
+          "oklch(48% 0.065 268.4)",
+          "oklch(59% 0.058 268.4)",
+          "oklch(70% 0.050 268.4)",
+          "oklch(82% 0.042 268.4)",
+          "oklch(95% 0.034 268.4)"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "oklch(42.4% 0.087 269.3)",
+        "tonalRamp": [
+          "oklch(15% 0.067 269.3)",
+          "oklch(26% 0.075 269.3)",
+          "oklch(37% 0.083 269.3)",
+          "oklch(48% 0.083 269.3)",
+          "oklch(59% 0.075 269.3)",
+          "oklch(70% 0.067 269.3)",
+          "oklch(82% 0.059 269.3)",
+          "oklch(95% 0.049 269.3)"
+        ]
+      },
+      "error": {
+        "role": "neutral",
+        "displayName": "Kiln Red",
+        "canonical": "oklch(46.5% 0.147 24.9)",
+        "tonalRamp": [
+          "oklch(15% 0.108 24.9)",
+          "oklch(26% 0.122 24.9)",
+          "oklch(37% 0.135 24.9)",
+          "oklch(48% 0.145 24.9)",
+          "oklch(59% 0.132 24.9)",
+          "oklch(70% 0.118 24.9)",
+          "oklch(82% 0.104 24.9)",
+          "oklch(95% 0.088 24.9)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "oklch(15% 0.000 89.9)",
+          "oklch(26% 0.000 89.9)",
+          "oklch(37% 0.000 89.9)",
+          "oklch(48% 0.000 89.9)",
+          "oklch(59% 0.000 89.9)",
+          "oklch(70% 0.000 89.9)",
+          "oklch(82% 0.000 89.9)",
+          "oklch(95% 0.000 89.9)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The couple's names, stacked; ampersand at 0.5em in cobalt."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles and the code-entry title (2.25rem)."
+      },
+      "salutation": {
+        "displayName": "Salutation",
+        "purpose": "The guest's name at the top of the panel, in cobalt."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Timeline times and stop titles; closing signature at 2rem."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Opening sentence and confirmation text, balanced, near 24ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Addresses and story copy."
+      },
+      "body-strong": {
+        "displayName": "Body Strong",
+        "purpose": "Venue names, the date, buttons and links."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Form labels and error lines."
+      }
+    },
+    "shadows": [
+      {
+        "name": "loose-sheet",
+        "value": "0 34px 60px -14px rgba(5, 14, 45, 0.65), 0 10px 20px -4px rgba(5, 14, 45, 0.4)",
+        "purpose": "Sealed sheet and code-entry sheet lying on the tile field."
+      },
+      {
+        "name": "frame-recess",
+        "value": "inset 0 4px 10px -2px rgba(5, 14, 45, 0.4), inset 4px 0 8px -4px rgba(5, 14, 45, 0.25), inset -2px 0 6px -4px rgba(5, 14, 45, 0.2), inset 0 0 0 1px rgba(15, 34, 96, 0.25)",
+        "purpose": "The raised frame's shadow falling onto the recessed paper."
+      },
+      {
+        "name": "tile-button",
+        "value": "0 8px 18px -4px rgba(5, 14, 45, 0.55)",
+        "purpose": "Glaze-face button on the cobalt field; hover 0 12px 22px -4px at 0.6."
+      },
+      {
+        "name": "primary-button",
+        "value": "0 6px 14px -4px rgba(5, 14, 45, 0.45)",
+        "purpose": "Cobalt button on paper; hover 0 10px 18px -4px at 0.5, active 0 3px 8px -2px at 0.4."
+      },
+      {
+        "name": "ornament",
+        "value": "0 3px 6px -2px rgba(5, 14, 45, 0.25), 0 0 0 1px #c9d2e6",
+        "purpose": "A single glazed tile set into the paper, with a grout ring."
+      },
+      {
+        "name": "ribbon",
+        "value": "0 2px 4px rgba(5, 14, 45, 0.3)",
+        "purpose": "Satin ribbon bands on the sealed sheet."
+      },
+      {
+        "name": "bow",
+        "value": "drop-shadow(0 5px 6px rgba(5, 14, 45, 0.35))",
+        "purpose": "Filter shadow under the SVG bow."
+      },
+      {
+        "name": "field-well",
+        "value": "inset 0 2px 3px rgba(15, 34, 96, 0.06)",
+        "purpose": "Shallow well inside the message textarea."
+      },
+      {
+        "name": "focus-halo",
+        "value": "0 0 0 3px rgba(29, 58, 148, 0.18)",
+        "purpose": "Active code cell."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Default: button lifts, content rise (0.8s, 0.09s stagger, 14px + 6px blur), RSVP swaps (0.45s), frame recess fade (0.6s)."
+      },
+      {
+        "name": "ease-untie",
+        "value": "cubic-bezier(0.65, 0, 0.35, 1)",
+        "purpose": "Bow untie: loops 0.6s, knot 0.4s, tails 0.7s, bands slide out 0.8s."
+      },
+      {
+        "name": "ease-unfold",
+        "value": "cubic-bezier(0.45, 0, 0.15, 1)",
+        "purpose": "Perspective unfold of the flap, 1.15s, perspective 1600px."
+      },
+      {
+        "name": "ease-expand",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Sheet expanding into the full panel paper, 0.95s."
+      },
+      {
+        "name": "ease-stamp",
+        "value": "cubic-bezier(0.5, 0, 0.2, 1)",
+        "purpose": "Selo pressed onto the paper, 0.42s, from 1.9x and -22deg to -9deg."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "opacity fade ~0.3s",
+        "purpose": "Every theatrical step collapses to a plain fade under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tile-module",
+        "value": "t = viewport width / round(W / clamp(34px, W/11, 72px)), min 5 columns"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The main action on paper: confirm presence, open the invitation.",
+      "html": "<button class=\"ds-btn-primary\">Sim, eu vou</button>",
+      "css": ".ds-btn-primary{min-height:3.25rem;padding:.8rem 1.25rem;border:0;border-radius:3px;background:#1d3a94;color:#fff;font-family:Figtree,system-ui,sans-serif;font-weight:600;font-size:1.0625rem;cursor:pointer;box-shadow:0 6px 14px -4px rgba(5, 14, 45,.45);transition:transform .25s cubic-bezier(.16,1,.3,1),box-shadow .25s cubic-bezier(.16,1,.3,1),background-color .25s}.ds-btn-primary:hover{transform:translateY(-1px);background:#2242a3;box-shadow:0 10px 18px -4px rgba(5, 14, 45,.5)}.ds-btn-primary:active{transform:translateY(1px);box-shadow:0 3px 8px -2px rgba(5, 14, 45,.4)}.ds-btn-primary:focus-visible{outline:2px solid #1d3a94;outline-offset:3px}"
+    },
+    {
+      "name": "Quiet Button",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "The secondary answer beside a primary button.",
+      "html": "<button class=\"ds-btn-quiet\">Não vou poder ir</button>",
+      "css": ".ds-btn-quiet{min-height:3.25rem;padding:.8rem 1.25rem;border:1px solid #9db0de;border-radius:3px;background:transparent;color:#1d3a94;font-family:Figtree,system-ui,sans-serif;font-weight:600;font-size:1.0625rem;cursor:pointer;transition:background-color .25s}.ds-btn-quiet:hover{background:rgba(157,176,222,.18)}.ds-btn-quiet:focus-visible{outline:2px solid #1d3a94;outline-offset:3px}"
+    },
+    {
+      "name": "Tile Button",
+      "kind": "button",
+      "refersTo": "button-tile",
+      "description": "A glaze-face button used only on the cobalt field.",
+      "html": "<div class=\"ds-field\"><button class=\"ds-btn-tile\">Desatar o laço</button></div>",
+      "css": ".ds-field{padding:32px;background:#1d3a94}.ds-btn-tile{padding:.85rem 1.75rem;border:0;border-radius:3px;background:#f4f6fb;color:#0f2260;font-family:Figtree,system-ui,sans-serif;font-weight:600;font-size:1.0625rem;cursor:pointer;box-shadow:0 8px 18px -4px rgba(5, 14, 45,.55);transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s cubic-bezier(.16,1,.3,1)}.ds-btn-tile:hover{transform:translateY(-2px);box-shadow:0 12px 22px -4px rgba(5, 14, 45,.6)}.ds-btn-tile:active{transform:translateY(1px);box-shadow:0 4px 10px -2px rgba(5, 14, 45,.5)}.ds-btn-tile:focus-visible{outline:2px solid #fff;outline-offset:3px}"
+    },
+    {
+      "name": "Text Link",
+      "kind": "custom",
+      "refersTo": "text-link",
+      "description": "Cobalt link with a wash underline; outbound links carry the stroked arrow.",
+      "html": "<a class=\"ds-link\" href=\"#\">Abrir no Google Maps <svg viewBox=\"0 0 16 16\" width=\"14\" height=\"14\" aria-hidden=\"true\"><path d=\"M5 11 L11 5 M6 5 H11 V10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
+      "css": ".ds-link{display:inline-flex;align-items:center;gap:.25rem;color:#1d3a94;font-family:Figtree,system-ui,sans-serif;font-weight:600;font-size:1.0625rem;text-decoration:underline;text-decoration-color:#9db0de;text-decoration-thickness:1px;text-underline-offset:.28em;transition:text-decoration-color .2s}.ds-link:hover{text-decoration-color:#1d3a94}.ds-link:focus-visible{outline:2px solid #1d3a94;outline-offset:3px}"
+    },
+    {
+      "name": "Message Field",
+      "kind": "input",
+      "refersTo": "input-message",
+      "description": "Optional message textarea with a shallow well.",
+      "html": "<label class=\"ds-label\">Quer deixar um recado? <span>(opcional)</span><textarea class=\"ds-textarea\" rows=\"3\"></textarea></label>",
+      "css": ".ds-label{display:block;font-family:Figtree,system-ui,sans-serif;font-weight:500;font-size:.95rem;color:#14204a}.ds-label span{font-weight:400;color:#3b4b7e}.ds-textarea{display:block;width:100%;margin-top:.4rem;padding:.75rem .85rem;border:1px solid #c9d2e6;border-radius:3px;background:#fff;color:#14204a;font:inherit;font-size:1rem;resize:vertical;box-shadow:inset 0 2px 3px rgba(15,34,96,.06);transition:border-color .2s}.ds-textarea:focus{border-color:#1d3a94}.ds-textarea:focus-visible{outline:2px solid #1d3a94;outline-offset:3px}"
+    },
+    {
+      "name": "Code Cells",
+      "kind": "input",
+      "refersTo": "code-cell",
+      "description": "Four-digit invitation code, one Gloock digit per cell.",
+      "html": "<div class=\"ds-cells\"><span class=\"ds-cell\">1</span><span class=\"ds-cell\">2</span><span class=\"ds-cell ds-active\"></span><span class=\"ds-cell\"></span></div>",
+      "css": ".ds-cells{display:grid;grid-template-columns:repeat(4,3.5rem);gap:.5rem}.ds-cell{display:grid;place-items:center;height:4.25rem;border:1px solid #c9d2e6;border-radius:3px;background:#fff;font-family:Gloock,Georgia,serif;font-size:2.1rem;color:#0f2260;font-variant-numeric:tabular-nums;box-shadow:0 1px 3px rgba(15,34,96,.1);transition:border-color .2s,box-shadow .2s}.ds-cell:hover{border-color:#9db0de}.ds-active{border-color:#1d3a94;box-shadow:0 0 0 3px rgba(29,58,148,.18)}"
+    },
+    {
+      "name": "Timeline Stop",
+      "kind": "card",
+      "description": "A schedule entry on the paper: Gloock time and title, Figtree facts, no box.",
+      "html": "<div class=\"ds-stop\"><time class=\"ds-time\">10:30</time><div><h3 class=\"ds-title\">Cerimônia civil</h3><p class=\"ds-place\">Cartório de Registro Civil</p><p class=\"ds-addr\">Rua do Cartório, 000 · Bairro</p></div></div>",
+      "css": ".ds-stop{display:grid;grid-template-columns:4.5rem 1fr;gap:0 1rem;align-items:baseline;padding:24px;background:#f4f6fb;color:#14204a;font-family:Figtree,system-ui,sans-serif;font-size:1.0625rem;line-height:1.6}.ds-stop p,.ds-stop h3{margin:0}.ds-time{font-family:Gloock,Georgia,serif;font-size:1.6rem;line-height:1.2;color:#1d3a94;font-variant-numeric:tabular-nums lining-nums}.ds-title{font-family:Gloock,Georgia,serif;font-weight:400;font-size:1.6rem;line-height:1.2;color:#0f2260}.ds-place{margin-top:.35rem!important;font-weight:600}.ds-addr{color:#3b4b7e}"
+    },
+    {
+      "name": "Couple Names",
+      "kind": "custom",
+      "refersTo": "display",
+      "description": "The display moment: stacked names, half-size cobalt ampersand, date below.",
+      "html": "<div class=\"ds-couple-wrap\"><h1 class=\"ds-couple\"><span>Nome</span><span class=\"ds-amp\">&amp;</span><span>Nome</span></h1><p class=\"ds-date\">00 de mês de 0000</p></div>",
+      "css": ".ds-couple-wrap{padding:32px;background:radial-gradient(140% 100% at 30% 0%,#fbfcfe,#f4f6fb 60%);text-align:center}.ds-couple{display:flex;flex-direction:column;align-items:center;margin:0;font-family:Gloock,Georgia,serif;font-weight:400;font-size:clamp(3.25rem,15vw,6rem);line-height:.95;letter-spacing:-.015em;color:#0f2260}.ds-amp{font-size:.5em;line-height:1.3;color:#1d3a94}.ds-date{margin:20px 0 0;font-family:Figtree,system-ui,sans-serif;font-weight:600;font-size:1.0625rem;letter-spacing:.01em;color:#1d3a94;font-variant-numeric:tabular-nums}"
+    },
+    {
+      "name": "Recessed Panel",
+      "kind": "custom",
+      "description": "Paper recessed one tile inside a raised cobalt frame (tile art simplified to flat cobalt here).",
+      "html": "<div class=\"ds-panel\"><div class=\"ds-paper\">Conteúdo</div></div>",
+      "css": ".ds-panel{padding:36px;background:#1d3a94}.ds-paper{min-height:120px;display:grid;place-items:center;border-radius:2px;background:radial-gradient(140% 100% at 30% 0%,#fbfcfe,#f4f6fb 60%);color:#3b4b7e;font-family:Figtree,system-ui,sans-serif;box-shadow:inset 0 4px 10px -2px rgba(5, 14, 45,.4),inset 4px 0 8px -4px rgba(5, 14, 45,.25),inset -2px 0 6px -4px rgba(5, 14, 45,.2),inset 0 0 0 1px rgba(15,34,96,.25)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Azulejo Panel",
+    "overview": "The invitation is a wall of Luso-Brazilian tin-glazed tiles. A cobalt tile field fills the whole viewport; on it rests a folded sheet of cool white glaze, crossed by a white satin laço. Untying the bow unfolds the sheet in true perspective, and the sheet then expands until it is the panel itself: white glaze recessed one tile deep inside a frame made of the same cobalt field. Every surface is either tile or glaze. There is no third material.\n\nThe tiles are authored, not sourced: one pattern painted nine times with seeded wobble and uneven cobalt load, set in a 3×3 repeat so no two neighbours match. Grout lines and the frame recess give all the depth the panel needs; nothing is painted with gloss. Inside the frame the content is quiet and centered, set on the same tile module as the frame, with Gloock carrying the names and Figtree carrying the facts.\n\nThe world refuses the ivory card, gold script and watercolor floral of the template wedding invite. The glaze is cool and never cream; the only warm note is an ochre dot at the centre of each tile.",
+    "keyCharacteristics": [
+      "Two glazes of one authored tile: cobalt ground with white reserve (field and frame), white ground with cobalt paint (ornaments).",
+      "A tile module `t` computed so whole tiles span the viewport width; the paper inset, frame and vertical rhythm are all multiples of it.",
+      "Physical depth only: raised frame over recessed paper, drop shadows on the loose sheet, grout as the only line.",
+      "Gloock display over Figtree text, deep cobalt ink on cool white glaze.",
+      "Motion is a ceremony: untie, unfold, expand, then content rises in a soft stagger."
+    ],
+    "rules": [
+      {
+        "name": "The Cool Glaze Rule",
+        "body": "The paper is cool tin glaze, never cream, ivory or warm off-white. If a neutral reads warm, it is wrong.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ochre-In-The-Tile Rule",
+        "body": "Ochre lives only inside the painted tiles. It never becomes a button, a rule, a text colour or an accent.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tabular Hours Rule",
+        "body": "Times, dates and code digits use tabular figures so they align like printed schedule entries.",
+        "section": "typography"
+      },
+      {
+        "name": "The Sentence Case Rule",
+        "body": "Interface text is sentence case at normal tracking. Uppercase letterspacing exists only around the edge of the selo stamp, where it belongs to the stamp itself.",
+        "section": "typography"
+      },
+      {
+        "name": "The Grout Line Rule",
+        "body": "Edges land on the tile grid. A new surface that floats at an arbitrary inset from the frame is off-module.",
+        "section": "layout"
+      },
+      {
+        "name": "The Kiln Shadow Rule",
+        "body": "Shadows are navy (`5, 14, 45`), never neutral black or grey.",
+        "section": "elevation"
+      },
+      {
+        "name": "The No Gloss Rule",
+        "body": "Tiles get depth from grout and the recess only. No specular highlights, sheens or gradients are painted onto tiles.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** derive every inset and vertical gap from the tile module `t`; the paper is one tile in from each edge.",
+      "**Do** use the authored tile in its two glazes: cobalt for the field and frame, glaze for ornaments.",
+      "**Do** keep the paper cool tin glaze (`tin-glaze` to `glaze-bright`, lit from the upper left).",
+      "**Do** set names and titles in Gloock 400 and every practical fact in Figtree; times and digits tabular.",
+      "**Do** cast shadows in navy `rgb(5, 14, 45)` and give loose paper the loose-sheet shadow.",
+      "**Do** separate sections with a single ornament tile.",
+      "**Do** give every theatrical motion a reduced-motion fade."
+    ],
+    "donts": [
+      "**Don't** use ivory, cream, gold, script faces or watercolor florals.",
+      "**Don't** use ochre outside the tile paint.",
+      "**Don't** put cards, panels or boxed groups inside the frame; glazed tiles, form controls and the stamp are the only bounded shapes on the paper.",
+      "**Don't** paint gloss or sheen highlights onto tiles; depth comes from grout and the recess.",
+      "**Don't** add uppercase letterspaced labels or kickers above headings; the selo's edge text is the only tracked uppercase.",
+      "**Don't** use black or grey shadows."
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "src/styles.css"
+        ],
+        "createdAt": "2026-10-05T03:43:53.689Z",
+        "reason": "model triage: L206 is .flap-cover::after, the full-width 9px rolled-crease gradient at the folded sheet's hinge (finish reviewer required a visible fold), not a colored side border on a card"
+      }
+    ]
+  }
+}
