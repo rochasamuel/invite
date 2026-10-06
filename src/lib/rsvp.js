@@ -1,4 +1,5 @@
-const ENDPOINT = import.meta.env.VITE_RSVP_ENDPOINT
+// In `vite dev` there is no /api, so answers are only simulated there.
+const ENDPOINT = import.meta.env.DEV ? '' : '/api/rsvp'
 
 const key = (code) => `convite:rsvp:${code}`
 
@@ -15,37 +16,27 @@ function saveRsvp(code, value) {
   try {
     localStorage.setItem(key(code), JSON.stringify(value))
   } catch {
-    /* sem armazenamento local: a resposta já foi enviada à planilha */
+    /* sem armazenamento local: a resposta já foi enviada */
   }
 }
 
-export async function sendRsvp({ code, guest, attending, message }) {
-  const payload = {
-    code,
-    name: guest.name,
-    type: guest.type,
-    people: guest.couple ? 2 : 1,
-    attending,
-    message: message?.trim() || '',
-    at: new Date().toISOString(),
-  }
+export async function sendRsvp({ code, attending, message }) {
+  const payload = { code, attending, message: message?.trim() || '' }
 
   if (!ENDPOINT) {
-    console.warn('VITE_RSVP_ENDPOINT não configurado: resposta simulada.', payload)
+    console.warn('Ambiente de desenvolvimento: resposta simulada.', payload)
     await new Promise((r) => setTimeout(r, 900))
   } else {
-    // text/plain evita o preflight de CORS do Apps Script
     const res = await fetch(ENDPOINT, {
       method: 'POST',
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
     })
-    if (!res.ok) throw new Error(`HTTP ${res.status}`)
-    const data = await res.json().catch(() => ({ ok: true }))
-    if (!data.ok) throw new Error(data.error || 'Falha ao salvar')
+    const data = await res.json().catch(() => ({}))
+    if (!res.ok || !data.ok) throw new Error(data.error || `HTTP ${res.status}`)
   }
 
-  const stored = { attending, at: payload.at }
+  const stored = { attending, at: new Date().toISOString() }
   saveRsvp(code, stored)
   return stored
 }

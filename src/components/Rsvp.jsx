@@ -22,7 +22,7 @@ export default function Rsvp({ code, guest }) {
     setPending(attending)
     setError(false)
     try {
-      await sendRsvp({ code, guest, attending })
+      await sendRsvp({ code, attending })
       setStatus(attending ? 'yes' : 'no')
     } catch (err) {
       console.error(err)

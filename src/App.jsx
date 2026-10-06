@@ -3,6 +3,7 @@ import { guests } from './data/guests.js'
 import { event } from './data/event.js'
 import { normalizeCode } from './lib/code.js'
 import { useGrid } from './lib/useGrid.js'
+import Admin from './components/Admin.jsx'
 import CodeEntry from './components/CodeEntry.jsx'
 import Invitation from './components/Invitation.jsx'
 import { EmbossDefs } from './components/Ornaments.jsx'
@@ -13,6 +14,19 @@ function codeFromUrl() {
 }
 
 export default function App() {
+  if (window.location.pathname.replace(/\/+$/, '') === '/admin') {
+    return (
+      <>
+        <EmbossDefs />
+        <div className="field" aria-hidden="true" />
+        <Admin />
+      </>
+    )
+  }
+  return <Invite />
+}
+
+function Invite() {
   const grid = useGrid()
   const [code, setCode] = useState(codeFromUrl)
   const guest = code ? guests[code] : null

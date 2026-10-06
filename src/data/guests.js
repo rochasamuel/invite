@@ -14,10 +14,11 @@ export const guests = {
   'W78V': { name: 'Samam', type: 'completo' },
   'H5KZ': { name: 'Laura', type: 'completo' },
   'F3MU': { name: 'Larissa', type: 'completo' },
-  '3ZNR': { name: 'Thay', type: 'completo' },
-  'P8EQ': { name: 'Fab', type: 'completo' },
+  '3ZNR': { name: 'Thaynara', type: 'completo' },
+  'P8EQ': { name: 'Fabrício', type: 'completo' },
   '5YX8': { name: 'Samuel', type: 'completo' },
-  '82BP': { name: 'Natália e Velt', type: 'completo', couple: true },
+  '82BP': { name: 'Natália', type: 'completo' },
+  'F3H6': { name: 'Velt', type: 'completo' },
   '7M3D': { name: 'Davi', type: 'completo' },
 
   // Só o rodízio

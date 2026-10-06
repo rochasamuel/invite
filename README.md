@@ -1,6 +1,6 @@
 # Convite de casamento
 
-Convite digital personalizado (React + Vite). Cada convidado recebe um link com um código de 4 letras e números, vê o próprio nome, desata o laço, lê os detalhes e confirma presença. As respostas vão para uma planilha do Google.
+Convite digital personalizado (React + Vite). Cada convidado recebe um link com um código de 4 letras e números, vê o próprio nome, desata o laço, lê os detalhes e confirma presença. As respostas ficam salvas no próprio site e aparecem em `/admin`.
 
 ## Rodar localmente
 
@@ -21,19 +21,18 @@ Abra `http://localhost:5173/?c=HBQ9` (convite completo) ou `?c=R39U` (só pizzar
 
 > A lista de convidados vai junto no site publicado. Quem souber olhar o código-fonte consegue ver nomes e códigos. Para um convite de casamento isso costuma ser aceitável, mas vale saber.
 
-## Planilha de confirmações (Google Sheets)
+## Confirmações (Vercel + Redis)
 
-1. Crie uma planilha nova no Google Sheets.
-2. Abra **Extensões → Apps Script**, apague o conteúdo e cole o arquivo `apps-script/Code.gs`.
-3. Clique em **Implantar → Nova implantação**, escolha o tipo **App da Web**, com *Executar como: Eu* e *Quem pode acessar: Qualquer pessoa*. Autorize.
-4. Copie a URL do App da Web e crie um arquivo `.env.local` na raiz do projeto:
-   ```
-   VITE_RSVP_ENDPOINT=https://script.google.com/macros/s/XXXX/exec
-   ```
-   Na Vercel ou Netlify, cadastre a mesma variável nas configurações do projeto.
-5. As respostas aparecem na aba **Respostas** (uma linha por código; se mudarem a resposta, a linha é atualizada; a coluna **Pessoas** conta 2 para casais). A aba **Resumo** mostra quantas pessoas confirmaram.
+As respostas ficam guardadas num banco Redis (Upstash) e o casal acompanha tudo em **`/admin`**.
 
-Sem a variável configurada, o site simula o envio (bom para testar, mas nada é salvo).
+1. Na Vercel, abra o projeto → **Storage** → **Create Database** → **Upstash for Redis** (plano gratuito) e conecte ao projeto. As variáveis do banco são criadas sozinhas.
+2. Em **Settings → Environment Variables**, crie `ADMIN_PASSWORD` com a senha da página de confirmações.
+3. Faça um novo deploy.
+4. Abra `https://SEU-SITE/admin`, digite a senha e veja: pessoas confirmadas (casais contam 2), quem vem, quem não vem e quem ainda não respondeu.
+
+O site só aceita respostas de códigos que estão em `src/data/guests.js`. Responder de novo substitui a resposta anterior.
+
+Em `npm run dev` o envio é simulado e nada é salvo. Para testar com o banco de verdade, use `vercel dev` com as variáveis puxadas por `vercel env pull`.
 
 ## Publicar
 
@@ -41,4 +40,4 @@ Sem a variável configurada, o site simula o envio (bom para testar, mas nada é
 npm run build
 ```
 
-Envie a pasta `dist/` para a Vercel ou a Netlify (ou conecte o repositório; o comando de build é `npm run build` e a pasta de saída é `dist`).
+Conecte o repositório na Vercel (o comando de build é `npm run build` e a pasta de saída é `dist`). As funções em `api/` são publicadas junto.
