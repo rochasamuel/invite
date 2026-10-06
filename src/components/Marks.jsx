@@ -50,12 +50,12 @@ export function Selo({ dateLabel, initials }) {
           <path id="seloTop" d="M17 60 a 43 43 0 0 1 86 0" />
           <path id="seloBottom" d="M11.5 60 a 48.5 48.5 0 0 0 97 0" />
         </defs>
-        <g filter="url(#emb-fine)" fill="none" stroke="#000">
+        <g filter="url(#wax-fine)" fill="none" stroke="#000">
           <circle cx="60" cy="60" r="56" strokeWidth="2.2" />
           <circle cx="60" cy="60" r="51" strokeWidth="0.9" />
           <circle cx="60" cy="60" r="34" strokeWidth="1.4" />
         </g>
-        <g filter="url(#emb-fine)" fill="#000" fontFamily="'EB Garamond', serif" fontWeight="600" fontSize="8.4" letterSpacing="0.9" textAnchor="middle">
+        <g filter="url(#wax-fine)" fill="#000" fontFamily="'EB Garamond', serif" fontWeight="600" fontSize="8.4" letterSpacing="0.9" textAnchor="middle">
           <text>
             <textPath href="#seloTop" startOffset="50%">PRESENÇA CONFIRMADA</textPath>
           </text>
@@ -63,9 +63,12 @@ export function Selo({ dateLabel, initials }) {
             <textPath href="#seloBottom" startOffset="50%">{dateLabel}</textPath>
           </text>
         </g>
-        <g filter="url(#emb)" fill="#000" fontFamily="'Great Vibes', cursive" fontSize="30" textAnchor="middle">
-          <text x="54" y="66">{initials[0]}</text>
-          <text x="67" y="74">{initials[1]}</text>
+        {/* initials pressed in the sealing-wax red, centred in the inner ring */}
+        <g filter="url(#wax-letter)" fill="#000" fontFamily="'Great Vibes', cursive" fontSize="32" textAnchor="middle">
+          <text x="59" y="71">
+            {initials[0]}
+            {initials[1]}
+          </text>
         </g>
       </svg>
     </motion.div>

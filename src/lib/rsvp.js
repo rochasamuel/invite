@@ -48,21 +48,3 @@ export async function sendRsvp({ code, guest, attending, message }) {
   saveRsvp(code, stored)
   return stored
 }
-
-const openedKey = (code) => `convite:aberto:${code}`
-
-export function wasOpened(code) {
-  try {
-    return localStorage.getItem(openedKey(code)) === '1'
-  } catch {
-    return false
-  }
-}
-
-export function markOpened(code) {
-  try {
-    localStorage.setItem(openedKey(code), '1')
-  } catch {
-    /* ignora */
-  }
-}

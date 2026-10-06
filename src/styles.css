@@ -830,6 +830,14 @@ a:hover,
     --grain: var(--grain-soft);
     --mottle: var(--mottle-soft);
   }
+
+  .monogram-wrap {
+    margin-bottom: 1rem;
+  }
+
+  .monogram {
+    width: min(10rem, 42vw);
+  }
 }
 
 @media (min-width: 700px) {

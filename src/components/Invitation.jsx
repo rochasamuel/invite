@@ -1,6 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { animate as animateValue, motion, useAnimate, useMotionValue, useReducedMotion, useTransform } from 'motion/react'
-import { markOpened, wasOpened } from '../lib/rsvp.js'
 import Content from './Content.jsx'
 import { event } from '../data/event.js'
 import { Corners, Frame } from './Ornaments.jsx'
@@ -14,7 +13,7 @@ const EASE_REVEAL = [0.65, 0, 0.25, 1]
 // stages: sealed → breaking → opening → expanding → open
 export default function Invitation({ code, guest, grid }) {
   const reduce = useReducedMotion()
-  const [stage, setStage] = useState(() => (wasOpened(code) ? 'open' : 'sealed'))
+  const [stage, setStage] = useState('sealed')
   const [scope, animate] = useAnimate()
   // Flap rotations as motion values, so each face can be hidden exactly when it
   // turns away. backface-visibility alone leaks the filtered relief and text
@@ -40,7 +39,6 @@ export default function Invitation({ code, guest, grid }) {
 
   async function open() {
     if (stage !== 'sealed') return
-    markOpened(code)
     if (reduce) {
       setStage('open')
       return
@@ -70,14 +68,58 @@ export default function Invitation({ code, guest, grid }) {
     setStage('open')
   }
 
-  function close() {
-    rotL.set(0)
-    rotR.set(0)
-    setStage('sealed')
+  // The opening, played backwards: the words fade, the sheet shrinks back to the
+  // card and the flaps fold shut over the seal.
+  async function close() {
+    if (stage !== 'open') return
+    if (reduce) {
+      rotL.set(0)
+      rotR.set(0)
+      setStage('sealed')
+      return
+    }
+    setStage('fading')
+    await animate('[data-part=scroller]', { opacity: 0 }, { duration: 0.35, ease: 'easeOut' })
+    rotL.set(-172)
+    rotR.set(172)
+    setStage('collapsing')
   }
 
-  const sealed = stage === 'sealed' || stage === 'breaking' || stage === 'opening' || stage === 'expanding'
-  const paperShown = stage === 'open'
+  // Runs once the gate is mounted at full size with the flaps laid open.
+  useEffect(() => {
+    if (stage !== 'collapsing') return
+    let live = true
+    ;(async () => {
+      await Promise.all([
+        animate(
+          '[data-part=gate]',
+          { width: w, height: h, marginLeft: -half, marginTop: -h / 2 },
+          { duration: 1.2, ease: EASE_REVEAL },
+        ),
+        animate('[data-part=gate-shadow]', { opacity: 1 }, { duration: 1.2, ease: 'easeOut' }),
+        animate('[data-part=inside-corners]', { opacity: 1 }, { duration: 0.6, ease: 'linear' }),
+        new Promise((r) => setTimeout(r, 750)).then(() =>
+          Promise.all([
+            animateValue(rotL, 0, { duration: 1.4, ease: EASE_OPEN }),
+            animateValue(rotR, 0, { duration: 1.4, ease: EASE_OPEN, delay: 0.08 }),
+          ]),
+        ),
+      ])
+      if (!live) return
+      // the seal settles back into place
+      await animate('[data-part=seal]', { scale: 0.97 }, { duration: 0.14, ease: EASE_PRESS })
+      await animate('[data-part=seal]', { scale: 1 }, { duration: 0.3, ease: EASE_EXPAND })
+      if (live) setStage('sealed')
+    })()
+    return () => {
+      live = false
+    }
+  }, [stage]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  const collapsing = stage === 'collapsing'
+  const sealed =
+    stage === 'sealed' || stage === 'breaking' || stage === 'opening' || stage === 'expanding' || collapsing
+  const paperShown = stage === 'open' || stage === 'fading'
 
 
   // One full-width cover, shown half by half on the two flaps so the print
@@ -109,10 +151,23 @@ export default function Invitation({ code, guest, grid }) {
     <div ref={scope} className={`invitation stage-${stage}`}>
       {sealed && (
         <div className="stage-sealed-layer">
-          <motion.div data-part="gate" className="gate" style={{ width: w, height: h, marginLeft: -half, marginTop: -h / 2 }}>
-            <motion.div data-part="gate-shadow" className="sheet-shadow" />
+          <motion.div
+            data-part="gate"
+            className="gate"
+            style={
+              collapsing
+                ? { width: grid.W, height: grid.H, marginLeft: -grid.W / 2, marginTop: -grid.H / 2 }
+                : { width: w, height: h, marginLeft: -half, marginTop: -h / 2 }
+            }
+          >
+            <motion.div data-part="gate-shadow" className="sheet-shadow" style={{ opacity: collapsing ? 0 : 1 }} />
             <div className="gate-inside">
-              <motion.div data-part="inside-corners" className="cover-relief" aria-hidden="true">
+              <motion.div
+                data-part="inside-corners"
+                className="cover-relief"
+                aria-hidden="true"
+                style={{ opacity: collapsing ? 0 : 1 }}
+              >
                 <Corners size={w * 0.3} inset={6} />
               </motion.div>
             </div>
@@ -150,14 +205,10 @@ export default function Invitation({ code, guest, grid }) {
       {paperShown && (
         <>
           <div className="paper" style={{ left: paper.x, top: paper.y, width: paper.w, height: paper.h }} />
-          {stage === 'open' && (
-            <>
-              <div className="scroller" style={{ inset: grid.band }}>
-                <Content code={code} guest={guest} onClose={close} />
-              </div>
-              <Frame W={grid.W} band={grid.band} />
-            </>
-          )}
+          <div data-part="scroller" className="scroller" style={{ inset: grid.band }}>
+            <Content code={code} guest={guest} onClose={close} />
+          </div>
+          <Frame W={grid.W} band={grid.band} />
         </>
       )}
     </div>
