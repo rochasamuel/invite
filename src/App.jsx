@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { guests } from './data/guests.js'
 import { event } from './data/event.js'
+import { normalizeCode } from './lib/code.js'
 import { useGrid } from './lib/useGrid.js'
 import CodeEntry from './components/CodeEntry.jsx'
 import Invitation from './components/Invitation.jsx'
@@ -8,7 +9,7 @@ import { EmbossDefs } from './components/Ornaments.jsx'
 
 function codeFromUrl() {
   const c = new URLSearchParams(window.location.search).get('c')
-  return c ? c.replace(/\D/g, '').slice(0, 4) : null
+  return c ? normalizeCode(c) : null
 }
 
 export default function App() {

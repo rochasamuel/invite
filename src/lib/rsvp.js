@@ -24,6 +24,7 @@ export async function sendRsvp({ code, guest, attending, message }) {
     code,
     name: guest.name,
     type: guest.type,
+    people: guest.couple ? 2 : 1,
     attending,
     message: message?.trim() || '',
     at: new Date().toISOString(),

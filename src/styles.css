@@ -681,6 +681,19 @@ a:hover,
   text-wrap: balance;
 }
 
+.add-cal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.75rem;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.add-cal svg {
+  flex: none;
+}
+
 /* ───────── Closing ───────── */
 
 .closing {

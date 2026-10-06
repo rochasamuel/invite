@@ -31,6 +31,16 @@ export function NavIcon() {
   )
 }
 
+// Calendar page, for "add to calendar".
+export function CalendarIcon() {
+  return (
+    <svg {...iconProps} width={18} height={18}>
+      <rect x="4" y="5.5" width="16" height="14.5" rx="1.5" />
+      <path d="M4 10 H 20 M8.5 3.5 V 7 M15.5 3.5 V 7" />
+    </svg>
+  )
+}
+
 // Blind-embossed seal pressed into the sheet when presence is confirmed: rings,
 // lettering and the couple's initials are all relief, no ink. The sentence
 // beside it carries the meaning for screen readers and at a glance.

@@ -56,6 +56,8 @@ function Stop({ time, title, place, note }) {
 export default function Content({ code, guest, onClose }) {
   const reduce = useReducedMotion()
   const full = guest.type === 'completo'
+  const us = Boolean(guest.couple)
+  const voce = us ? 'vocês' : 'você'
   const [a, b] = event.couple
   const comma = event.date.indexOf(', ')
   const weekday = comma > 0 ? event.date.slice(0, comma) : ''
@@ -84,8 +86,8 @@ export default function Content({ code, guest, onClose }) {
         </motion.p>
         <motion.p variants={item} className="lede">
           {full
-            ? 'com muita alegria, convidamos você para o nosso casamento.'
-            : 'com muita alegria, convidamos você para celebrar o nosso casamento.'}
+            ? `com muita alegria, convidamos ${voce} para o nosso casamento.`
+            : `com muita alegria, convidamos ${voce} para celebrar o nosso casamento.`}
         </motion.p>
         <motion.h1 variants={item} className="couple">
           <span>{a}</span>
@@ -108,8 +110,8 @@ export default function Content({ code, guest, onClose }) {
         </h2>
         <p className="story">
           {full
-            ? 'Vamos dizer o sim no cartório, numa cerimônia simples e rápida. Depois, seguimos juntos para a pizzaria.'
-            : 'O sim vai ser no cartório, numa cerimônia pequena. Depois, queremos você com a gente na pizzaria.'}
+            ? `${us ? 'Vocês estão' : 'Você está'} entre as poucas pessoas que vão estar com a gente no cartório, na hora do sim. Depois, seguimos juntos para um rodízio de pizza.`
+            : `O sim vai ser no cartório, numa cerimônia pequena. Depois, queremos ${voce} com a gente para celebrar num rodízio de pizza.`}
         </p>
         <ol className="timeline">
           {full && <Stop time={event.cartorio.time} title="Cerimônia civil" place={event.cartorio} />}
@@ -117,7 +119,7 @@ export default function Content({ code, guest, onClose }) {
             time={event.pizzaria.time}
             title="Celebração"
             place={event.pizzaria}
-            note="Venha com fome e com alegria: a celebração é por nossa conta."
+            note={`${us ? 'Venham' : 'Venha'} com fome e com alegria: a celebração é por nossa conta.`}
           />
         </ol>
       </motion.section>
