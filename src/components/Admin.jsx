@@ -3,7 +3,7 @@ import { guests } from '../data/guests.js'
 import { Corners } from './Ornaments.jsx'
 
 const PASS_KEY = 'convite:admin'
-const people = (g) => (g.couple ? 2 : 1)
+const people = (g) => g.people ?? (g.couple ? 2 : 1)
 const STATUS = { yes: 'Vem', no: 'Não vem', none: 'Sem resposta' }
 const ORDER = { yes: 0, none: 1, no: 2 }
 
@@ -154,7 +154,7 @@ export default function Admin() {
               <span className="admin-name">{r.name}</span>
               <span className="admin-meta">
                 {r.code} · {r.type === 'completo' ? 'Cartório + rodízio' : 'Só rodízio'}
-                {r.couple && ' · casal'}
+                {r.people ? ` · ${r.people} pessoas` : r.couple && ' · casal'}
               </span>
               {r.message && <span className="admin-message">“{r.message}”</span>}
             </div>

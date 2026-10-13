@@ -3,7 +3,8 @@
 // type: 'completo'   → cartório + pizzaria
 //       'celebracao' → só a pizzaria
 // couple: true → convite de casal (um só código, textos no plural, conta 2 pessoas)
-// O link de cada convite é: https://SEU-SITE/?c=CODIGO
+// people: N   → quantas pessoas o convite conta, quando não são 1 nem 2
+// O link de cada convite é: https://eduardaesamuel.com.br/?c=CODIGO
 export const guests = {
   // Cartório + rodízio
   'HBQ9': { name: 'Cristiane', type: 'completo' },
@@ -27,4 +28,7 @@ export const guests = {
   '6JYS': { name: 'Jorge', type: 'celebracao' },
   'D2JR': { name: 'Moisés', type: 'celebracao' },
   '5F4C': { name: 'Pedro e Marcela', type: 'celebracao', couple: true },
+  'BFE8': { name: 'Fabiana', type: 'celebracao' },
+  '65E4': { name: 'Fátima', type: 'celebracao' },
+  'DVKF': { name: 'Julia, Igor e Olívia', type: 'celebracao', couple: true, people: 3 },
 }

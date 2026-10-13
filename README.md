@@ -17,7 +17,7 @@ Abra `http://localhost:5173/?c=HBQ9` (convite completo) ou `?c=R39U` (só pizzar
 2. **Convidados:** edite `src/data/guests.js`. Cada código de 4 letras e números é um convite (uma pessoa, ou um casal com `couple: true`):
    - `type: 'completo'` mostra o cartório e a pizzaria.
    - `type: 'celebracao'` mostra só a pizzaria.
-3. **Links:** o link de cada convite é `https://SEU-SITE/?c=CODIGO`.
+3. **Links:** o link de cada convite é `https://eduardaesamuel.com.br/?c=CODIGO`.
 
 > A lista de convidados vai junto no site publicado. Quem souber olhar o código-fonte consegue ver nomes e códigos. Para um convite de casamento isso costuma ser aceitável, mas vale saber.
 
@@ -28,7 +28,7 @@ As respostas ficam guardadas num banco Redis (Upstash) e o casal acompanha tudo 
 1. Na Vercel, abra o projeto → **Storage** → **Create Database** → **Upstash for Redis** (plano gratuito) e conecte ao projeto. As variáveis do banco são criadas sozinhas.
 2. Em **Settings → Environment Variables**, crie `ADMIN_PASSWORD` com a senha da página de confirmações.
 3. Faça um novo deploy.
-4. Abra `https://SEU-SITE/admin`, digite a senha e veja: pessoas confirmadas (casais contam 2), quem vem, quem não vem e quem ainda não respondeu.
+4. Abra `https://eduardaesamuel.com.br/admin`, digite a senha e veja: pessoas confirmadas (casais contam 2), quem vem, quem não vem e quem ainda não respondeu.
 
 O site só aceita respostas de códigos que estão em `src/data/guests.js`. Responder de novo substitui a resposta anterior.
 
