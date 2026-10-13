@@ -30,5 +30,5 @@ export const guests = {
   '5F4C': { name: 'Pedro e Marcela', type: 'celebracao', couple: true },
   'BFE8': { name: 'Fabiana', type: 'celebracao' },
   '65E4': { name: 'Fátima', type: 'celebracao' },
-  'DVKF': { name: 'Julia, Igor e Olívia', type: 'celebracao', couple: true, people: 3 },
+  'DVKF': { name: 'Julia, Igor, Olívia e Arthur', type: 'celebracao', couple: true, people: 4 },
 }
