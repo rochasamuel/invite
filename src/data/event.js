@@ -7,7 +7,6 @@ export const event = {
   date: 'Quinta-feira, 19 de novembro de 2026',
   dateShort: '19.11.2026', // aparece no selo de confirmação
   dateISO: '2026-11-19', // usado no botão de adicionar ao calendário
-  rsvpBy: '12 de novembro',
 
   // Cerimônia civil (aparece só para convites do tipo "completo")
   cartorio: {

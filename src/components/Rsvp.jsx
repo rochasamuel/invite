@@ -43,7 +43,7 @@ export default function Rsvp({ code, guest }) {
         {status === 'idle' && (
           <motion.div key="form" {...fade} className="rsvp-form">
             <p className="rsvp-lede">
-              {us ? 'Confirmem a presença de vocês' : 'Confirme sua presença'} até <span className="nowrap">{event.rsvpBy}</span>, por favor.
+              {us ? 'Confirmem a presença de vocês' : 'Confirme sua presença'}, por favor.
             </p>
 
             <div className="rsvp-actions">
